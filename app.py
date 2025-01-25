@@ -72,3 +72,7 @@ def customers():
 def makebooking():
     #Make a booking
     return render_template()
+
+
+if __name__ == "__main__":
+    app.run(host='localhost', port=8080, debug=True)
