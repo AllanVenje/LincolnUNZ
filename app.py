@@ -65,7 +65,11 @@ def tourlist():
 @app.route("/customers")
 def customers():
     #List customer details.
-    return render_template("customers.html")  
+    cursor = getCursor()
+    qstr = "SELECT * FROM customers;"
+    cursor.execute(qstr)
+    customers = cursor.fetchall()
+    return render_template("customers.html", customers=customers)  
 
 
 @app.route("/booking/add")
