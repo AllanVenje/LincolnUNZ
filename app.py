@@ -78,10 +78,14 @@ def customers():
     return render_template("customers.html", customers=customers)
 
 
-@app.route("/booking/add")
-def makebooking():
+@app.route("/booking")
+def booking():
     # Make a booking
-    return render_template()
+    cursor = getCursor()
+    qstr = "SELECT * FROM destinations;"
+    cursor.execute(qstr)
+    dest = cursor.fetchall()
+    return render_template("booking.html", destinations=dest)
 
 
 @app.errorhandler(404)

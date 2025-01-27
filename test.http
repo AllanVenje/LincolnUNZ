@@ -1,6 +1,5 @@
 ### Tours
 GET http://localhost:8080/tours
 
-
 ### customers
 GET http://localhost:8080/customers
