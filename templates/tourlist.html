@@ -5,5 +5,25 @@
 {% block content %}
 
 <!-- Display a list of the customers on the tour -->
-
+<h1>{{ tourname }} - {{ startdate }}</h1>
+<table class="table table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Customer ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Family Name</th>
+        <th scope="col">DoB</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for customer in customerlist %}
+      <tr>
+        <th scope="row">{{ customer['customerid'] }}</th>
+        <td>{{ customer['firstname'] }}</td>
+        <td>{{ customer['familyname'] }}</td>
+        <td>{{ customer['dob'] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

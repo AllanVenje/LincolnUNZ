@@ -4,11 +4,61 @@
 
 {% block content %}
 
-<p>Home </p>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Introduction</h1>
+        <h5>Aotearoa Tours Ltd (ATL) is a New Zealand based tourism company that runs international tours
+            for customers from all over the world.</h5>
+        <img src="{{ url_for('static', filename='images/hqdefault.jpg') }}" height="500" width="100%"
+            alt="New Zealand Trips">
+    </div>
+</div>
+
+<!-- Destinations Section -->
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="destination-card">
+                <img src="{{ url_for('static', filename='images/Milford.jpg') }}" height="200" width="400"
+                    alt="Destination 1"><br />
+                <div class="card-body">
+                    <h2 class="card-title">Milford Sound</h2>
+                    <p class="card-text" style="font-size: larger;"">Explore the stunning fjords and waterfalls of Milford Sound.</p>
+                    </div>
+                </div>
+            </div>
+            <div class=" col-md-4 mb-3">
+                    <div class="destination-card">
+                        <img src="{{ url_for('static', filename='images/Queenstown.jpg') }}" height="200" width="400"
+                            alt="Destination 2"><br />
+                        <div class="card-body">
+                            <h2 class="card-title">Queenstown</h2>
+                            <p class="card-text" style="font-size: larger;">Adventure capital of the world with bungee
+                                jumping, skiing, and more.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="destination-card">
+                        <img src="{{ url_for('static', filename='images/Rotorua.jpg') }}" height="200" width="400"
+                            alt="Destination 3"><br />
+                        <div class="card-body">
+                            <h2 class="card-title">Rotorua</h2>
+                            <p class="card-text" style="font-size: larger;">Experience geothermal wonders and Maori
+                                culture in Rotorua.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="container py-5">
+            <h2 class="text-center mb-4">About New Zealand</h2>
+            <p class="text-center lead">New Zealand is a paradise for nature lovers, with its breathtaking landscapes,
+                diverse wildlife, and vibrant culture. From the snow-capped mountains of the Southern Alps to the
+                pristine beaches of the Bay of Islands, there is something for everyone.</p>
+        </div>
 
 
-<p>Add some brief text and an image here </p>
-
-
-
-{% endblock %}
+        {% endblock %}
