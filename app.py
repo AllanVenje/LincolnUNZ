@@ -82,10 +82,12 @@ def customers():
 def booking():
     # Make a booking
     cursor = getCursor()
-    qstr = "SELECT * FROM destinations;"
+    qstr = "SELECT b.bookingid FROM tourbookings b JOIN customer c ON c.custo;"
     cursor.execute(qstr)
-    dest = cursor.fetchall()
-    return render_template("booking.html", destinations=dest)
+
+    # List all booking orders
+
+    return render_template("booking.html")
 
 
 @app.errorhandler(404)
