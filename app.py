@@ -127,14 +127,51 @@ def customer_search():
     return render_template("customers.html", flag=1, counts=counts, customers=customers)
 
 
-@app.route('/customer_new')
+@app.route('/customer_new', methods = ['GET', 'POST'])
 def customer_new():
-    cursor = getCursor()
-    return "Ongoing..."
+    if request.method == 'POST':
+        firstname = request.form.get('firstname')
+        familyname = request.form.get('familyname')
+        dob = request.form.get('dob')
+        email = request.form.get('email')
+        phone = request.form.get('phone')
+        cursor = getCursor()
+        qstr = "INSERT INTO customers (firstname, familyname, dob, email, phone) VALUES (%s, %s, %s, %s, %s)"; 
+        cursor.execute(qstr, (firstname, familyname, dob, email, phone))
+        return redirect(url_for('customer_search'))
+    else:
+        return render_template("users.html", flag=1)
 
-@app.route('/customer_edit')
+
+@app.route('/customer_edit', methods = ['GET', 'POST'])
 def customer_edit():
-    return "Ongoing..."
+    if request.method == 'POST':
+        selected_user = request.form.get('edit_options')
+        cursor = getCursor()
+        qstr = f"SELECT * FROM customers WHERE customerid = {selected_user};"
+        cursor.execute(qstr)
+        customer = cursor.fetchone()
+        return render_template("users.html", flag=2, customer=customer)
+    else:
+        cursor = getCursor()
+        qstr = "SELECT * FROM customers;"
+        cursor.execute(qstr)
+        customers = cursor.fetchall()
+        return render_template("users.html", flag=3, customers=customers)
+    
+
+@app.route('/customer_update', methods = ['POST'])
+def customer_update():
+    cursor = getCursor()
+    firstname = request.form.get('firstname')
+    familyname = request.form.get('familyname')
+    dob = request.form.get('dob')
+    email = request.form.get('email')
+    phone = request.form.get('phone')
+    customerid = request.form.get('customerid')
+    qstr = "UPDATE customers SET firstname = %s, familyname = %s, dob = %s, email = %s, phone = %s WHERE customerid = %s;"
+    cursor.execute(qstr, (firstname, familyname, dob, email, phone, customerid))
+    return redirect(url_for('customer_search'))
 
 
 @app.route("/Orders", methods=['GET', 'POST'])

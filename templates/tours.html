@@ -4,41 +4,43 @@
 
 {% block content %}
 
-
-<form action="tours" method="POST" class="needs-validation" novalidate>
-    <div>
-        <label for="tourlist">Select the tour to display</label>
-        <select class="form-select" name="tourid" id="tourid" required>
-            <option disabled selected value="">Choose a tour</option>
-            {% for tour in tours %}
-            <option value="{{tour['tourid']}}">{{tour['tourname']}}</option>
-            {% endfor %}
-        </select>
-        <div class="invalid-feedback">
-            Please choose a tour.
+<div class="container mt-5">
+    <form action="tours" method="POST" class="needs-validation" novalidate>
+        <div>
+            <label for="tourlist"><i class="bi bi-1-circle-fill" style="color: blue; font-size: 2em;"></i> Select the tour to display</label>
+            <select class="form-select" name="tourid" id="tourid" required>
+                <option disabled selected value="">Choose a tour</option>
+                {% for tour in tours %}
+                <option value="{{tour['tourid']}}">{{tour['tourname']}}</option>
+                {% endfor %}
+            </select>
+            <div class="invalid-feedback">
+                Please choose a tour.
+            </div>
         </div>
-    </div>
-    <button class="btn btn-primary" type="submit">Select Tour Group</button>
-</form>
+        <i class="bi bi-2-circle-fill" style="color: blue; font-size: 2em;"></i>
+        <button class="btn btn-primary" type="submit">Select Tour Group</button>
+    </form>
+    <br/>
+    <form action="tours/list" method="POST" class="needs-validation" novalidate>
+        <input type="hidden" name="tourid" value="{{tourid}}" />
+        <div>
+            <label for="tourgroup"><i class="bi bi-3-circle-fill" style="color: blue; font-size: 2em;"></i> Select the tour group to display</label>
+            <select class="form-select" name="tourgroupid" id="tourgroupid" required>
+                <option disabled selected value="">Choose a tour group</option>
+                {% for tour in tourgroups %}
+                {{tour}}
+                <option name="tourgroupid" value="{{tour['tourgroupid']}}">{{tour['startdate']}}</option>
+                {% endfor %}
 
-<form action="tours/list" method="POST" class="needs-validation" novalidate>
-    <input type="hidden" name="tourid" value="{{tourid}}" />
-    <div>
-        <label for="tourgroup">Select the tour group to display</label>
-        <select class="form-select" name="tourgroupid" id="tourgroupid" required>
-            <option disabled selected value="">Choose a tour group</option>
-            {% for tour in tourgroups %}
-            {{tour}}
-            <option name="tourgroupid" value="{{tour['tourgroupid']}}">{{tour['startdate']}}</option>
-            {% endfor %}
-
-        </select>
-        <div class="invalid-feedback">
-            Please choose a tour group.
+            </select>
+            <div class="invalid-feedback">
+                Please choose a tour group.
+            </div>
         </div>
-    </div>
-    <button class="btn btn-primary" type="submit">Show Customers on Tour</button>
-</form>
-
+        <i class="bi bi-4-circle-fill" style="color: blue; font-size: 2em;"></i>
+        <button class="btn btn-primary" type="submit">Show Customers on Tour</button>
+    </form>
+</div>
 
 {% endblock %}
