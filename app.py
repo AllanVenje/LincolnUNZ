@@ -40,13 +40,13 @@ def tours():
         # Lists the tours        
         qstr = "select tourid, tourname from tours;"
         cursor.execute(qstr)
-
         tours = cursor.fetchall()
         return render_template("tours.html", tours=tours)
     else:
+        # List the tour groups for the selected tour
         tourid = request.form.get("tourid")
-        qstr = "select tourgroupid, startdate from tourgroups where tourid=%s;"
-        cursor.execute(qstr, (tourid,))
+        qstr = f"select tourgroupid, startdate from tourgroups where tourid={tourid};"
+        cursor.execute(qstr)
         tourgroups = cursor.fetchall()
         return render_template("tours.html", tourid=tourid, tourgroups=tourgroups)
 
@@ -63,7 +63,9 @@ def tourlist():
     qstr = f"SELECT startdate FROM tourgroups WHERE tourgroupid={tourgroupid};"
     cursor.execute(qstr)
     startdate = cursor.fetchone()['startdate']
-    qstr = f"SELECT c.customerid, c.firstname, c.familyname, c.dob FROM customers c JOIN tourbookings tb ON c.customerid=tb.customerid WHERE tb.tourgroupid={tourgroupid} ORDER BY c.firstname, c.dob DESC;"
+    qstr = f"""SELECT c.customerid, c.firstname, c.familyname, c.dob, tours.tourid, tours.tourname, itineraries.destinationid, destinations.destinationname
+      FROM customers AS c JOIN tours ON tours.tourid={tourid} JOIN itineraries ON itineraries.tourid = {tourid} JOIN destinations ON 
+      itineraries.destinationid = destinations.destinationid ORDER BY c.firstname ASC"""
     cursor.execute(qstr)
     customerlist = cursor.fetchall()
     return render_template("tourlist.html", tourname=tourname, startdate=startdate, customerlist=customerlist)
