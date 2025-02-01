@@ -7,30 +7,32 @@
 <!-- Display a list of the customers on the tour -->
 
 {% if flag == 1 %}
+<form action="/Orders" method="post">
+<h3 style="background-color: darkblue; color: white; text-align: center;">Total: {{ counts }} Customers</h3>
   <table class="table table-hover">
-    <thead class="table-dark">
+    <thead class="table-primary">
       <tr>
         <th scope="col">Customer Id</th>
-        <th scope="col">First Name</th>
-        <th scope="col">Family Name</th>
+        <th scope="col">Customer Name</th>
         <th scope="col">DoB</th>
         <th scope="col">Email</th>
-        <th scope="col">Phone</th>
       </tr>
     </thead>
     <tbody>
       {% for customer in customers %}
       <tr>
         <th scope="row">{{ customer['customerid'] }}</th>
-        <td>{{ customer['firstname'] }}</td>
-        <td>{{ customer['familyname'] }}</td>
+        <td>
+          <input type="hidden" name="customerid" value="{{ customer['customerid'] }}">
+          <button type="submit">{{ customer['firstname'] }} {{customer['familyname'] }}</button>
+        </td>
         <td>{{ customer['dob'] }}</td>
         <td>{{ customer['email'] }}</td>
-        <td>{{ customer['phone'] }}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
+</form>
 {% endif %}
 
 {% if flag == 2 %}
@@ -118,5 +120,6 @@
         </table>
     </div>
 {% endif %}
+
 
 {% endblock %}

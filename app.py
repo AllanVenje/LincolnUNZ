@@ -114,23 +114,45 @@ def makebooking():
     return render_template("booking.html", customers=customers, tourgroups=tourgroups)
 
 
-@app.route("/customers")
-def customers():
+@app.route("/customer_search")
+def customer_search():
     # List customer details.
     cursor = getCursor()
     qstr = "SELECT * FROM customers;"
     cursor.execute(qstr)
     customers = cursor.fetchall()
-    return render_template("customers.html", flag=1, customers=customers)
+    counts = len(customers)
+    return render_template("customers.html", flag=1, counts=counts, customers=customers)
 
 
-@app.route("/Orders")
-def Orders():
+@app.route('/customer_new')
+def customer_new():
     cursor = getCursor()
-    qstr = "SELECT tk.bookingid, tk.tourgroupid, tk.customerid, c.firstname, c.familyname, c.dob, c.email FROM tourbookings tk JOIN customers c ON tk.customerid = c.customerid ORDER BY tk.bookingid ASC;"
-    cursor.execute(qstr)
-    orders = cursor.fetchall()
-    return render_template("customers.html", flag=2, orderlist=orders)
+    return "Ongoing..."
+
+@app.route('/customer_edit')
+def customer_edit():
+    return "Ongoing..."
+
+
+@app.route("/Orders", methods=['GET', 'POST'])
+def Orders():
+    if request.method == 'POST':
+        cursor = getCursor()
+        customerid = request.form.get('customerid')
+        qstr = f"""SELECT tk.bookingid, tk.tourgroupid, tg.tourid, t.tourname, it.destinationid, dt.destinationname, tk.customerid, c.firstname, c.familyname, c.dob, 
+        c.email FROM tourbookings as tk JOIN customers as c ON tk.customerid = c.customerid JOIN tourgroups as tg ON 
+        tk.tourgroupid = tg.tourgroupid JOIN tours AS t ON tg.tourid = t.tourid JOIN itineraries AS it ON 
+        it.tourid = t.tourid JOIN destinations AS dt ON it.destinationid = dt.destinationid WHERE tk.customerid = {customerid} ORDER BY tk.bookingid ASC"""
+        cursor.execute(qstr)
+        orders = cursor.fetchall()
+        return render_template("customers.html", flag=4, orderlist=orders)
+    else:
+        cursor = getCursor()
+        qstr = "SELECT tk.bookingid, tk.tourgroupid, tk.customerid, c.firstname, c.familyname, c.dob, c.email FROM tourbookings tk JOIN customers c ON tk.customerid = c.customerid ORDER BY tk.bookingid ASC;"
+        cursor.execute(qstr)
+        orders = cursor.fetchall()
+        return render_template("customers.html", flag=2, orderlist=orders)
 
 
 @app.route("/Searching")

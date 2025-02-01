@@ -5,25 +5,29 @@
 {% block content %}
 
 <!-- Display a list of the customers on the tour -->
-<span class="badge text-bg-warning" style="font-size: 16px;">{{ tourname }} - {{ startdate }}</span>
-<table class="table table-hover">
-    <thead class="table-dark">
-      <tr>
-        <th scope="col">Customer ID</th>
-        <th scope="col">First Name</th>
-        <th scope="col">Family Name</th>
-        <th scope="col">DoB</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for customer in customerlist %}
-      <tr>
-        <th scope="row">{{ customer['customerid'] }}</th>
-        <td>{{ customer['firstname'] }}</td>
-        <td>{{ customer['familyname'] }}</td>
-        <td>{{ customer['dob'] }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-</table>
+
+<div class="container">
+    <span class="badge text-bg-warning" style="font-size: 16px;">{{ tourname }} - {{ startdate }}</span>
+    <table class="table table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Customer ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Family Name</th>
+            <th scope="col">DoB</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for customer in customerlist %}
+          <tr>
+            <th scope="row">{{ customer['customerid'] }}</th>
+            <td>{{ customer['firstname'] }}</td>
+            <td>{{ customer['familyname'] }}</td>
+            <td>{{ customer['dob'] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+</div>
+
 {% endblock %}

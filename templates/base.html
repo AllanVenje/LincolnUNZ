@@ -23,14 +23,20 @@
             <li class="nav-item">
               <a class="nav-link" href="{{url_for('tours')}}">Tours</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{url_for('customers')}}">Customers</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Customer</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{url_for('customer_new')}}">New...</a></li>
+                <li><a class="dropdown-item" href="{{url_for('customer_edit')}}">Edit...</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{{url_for('customer_search')}}" >Search...</a></li>
+              </ul>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Booking</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{{url_for('makebooking')}}">New</a></li>
-                <li><a class="dropdown-item" href="{{url_for('Searching')}}">Query</a></li>
+                <li><a class="dropdown-item" href="{{url_for('Searching')}}">Search</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Edit</a></li>
               </ul>
