@@ -4,16 +4,31 @@
 
 {% block content %}
 
-<body>
-    <span class="badge text-bg-primary" style="font-size: 16px;">Booking: Select City Destination</span>
-    <select class="form-select">
-        {% for dest in destinations %}
-        <option value="{{dest['destinationid']}}">{{dest['destinationname']}},{{dest['destinationid']}}</option>
-        {% endfor %}
-    </select>
-    <span class="badge rounded-pill text-bg-success">Customer</span>
-    <br/>
-    <span class="badge text-bg-primary">Booking: Select Tours Destination</span>
-</body>
+    <div class="container mt-5">    
+        <h2 class="mb-3">Make a Booking</h2>
+        {% if error %}
+            <p style="background: linear-gradient(to right, #ff7e5f, #feb47b); color: transparent; font-size: 2em; -webkit-background-clip: text;">{{ error }}</p>
+        {% else %}
+        <form method="POST" action="{{url_for('makebooking')}}" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="customerid" class="form-label">Choose Customer:</label>
+                <select name="customerid" id="customerid" class="form-select">
+                    {% for customer in customers %}
+                        <option value="{{ customer.customerid }}">{{ customer.firstname }} {{ customer.familyname }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="tourgroupid" class="form-label">Choose Tour Group:</label>
+                <select name="tourgroupid" id="tourgroupid" class="form-select">
+                    {% for tourgroup in tourgroups %}
+                        <option value="{{ tourgroup.tourgroupid }}">{{ tourgroup.tourname }} ({{ tourgroup.startdate }})</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Booking Now</button>
+        </form>
+        {% endif %}
+    </div>
 
 {% endblock %}

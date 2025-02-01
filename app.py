@@ -3,10 +3,11 @@ from flask import render_template
 from flask import request
 from flask import redirect
 from flask import url_for
-from datetime import date, datetime, timedelta
+
 import mysql.connector
 import mysql.connector.pooling
 import connect
+
 
 app = Flask(__name__)
 
@@ -68,6 +69,51 @@ def tourlist():
     return render_template("tourlist.html", tourname=tourname, startdate=startdate, customerlist=customerlist)
 
 
+@app.route("/makebooking", methods=["GET", "POST"])
+def makebooking():
+    cursor = getCursor()
+    if request.method == "POST":
+        customerid = request.form.get('customerid')
+        tourgroupid = request.form.get('tourgroupid')
+
+        # Get customer dob
+        qstr = "SELECT dob FROM customers WHERE customerid=%s;"
+        cursor.execute(qstr, (customerid,))
+        dob = cursor.fetchone()['dob']
+
+        # Get tourgroup start date and tour age restriction
+        qstr = "SELECT startdate, t.agerestriction FROM tourgroups tg JOIN tours t ON tg.tourid = t.tourid WHERE tg.tourgroupid=%s;"
+        cursor.execute(qstr, (tourgroupid,))
+        tour_info = cursor.fetchone()
+        startdate = tour_info['startdate']
+        agerestriction = tour_info['agerestriction']
+
+        # Calculate customer age
+        # from datetime import datetime
+        # dob = datetime.strptime(dob, '%Y-%m-%d')
+        # startdate = datetime.strptime(startdate, '%Y-%m-%d')
+        age = (startdate - dob).days // 365
+
+        # Check age restriction
+        if age < agerestriction:
+            return render_template("booking.html", error="Age restriction not met for this tour.")
+
+        # Insert booking
+        qstr = "INSERT INTO tourbookings (tourgroupid, customerid) VALUES (%s, %s);"
+        cursor.execute(qstr, (tourgroupid, customerid))
+        return redirect(url_for('Orders'))
+
+    # GET method: Display booking form
+    qstr = "SELECT customerid, firstname, familyname FROM customers;"
+    cursor.execute(qstr)
+    customers = cursor.fetchall()
+
+    qstr = "SELECT tg.tourgroupid, t.tourname, tg.startdate FROM tourgroups tg JOIN tours t ON tg.tourid = t.tourid WHERE tg.startdate > CURDATE();"
+    cursor.execute(qstr)
+    tourgroups = cursor.fetchall()
+    return render_template("booking.html", customers=customers, tourgroups=tourgroups)
+
+
 @app.route("/customers")
 def customers():
     # List customer details.
@@ -75,19 +121,38 @@ def customers():
     qstr = "SELECT * FROM customers;"
     cursor.execute(qstr)
     customers = cursor.fetchall()
-    return render_template("customers.html", customers=customers)
+    return render_template("customers.html", flag=1, customers=customers)
 
 
-@app.route("/booking")
-def booking():
-    # Make a booking
+@app.route("/Orders")
+def Orders():
     cursor = getCursor()
-    qstr = "SELECT b.bookingid FROM tourbookings b JOIN customer c ON c.custo;"
+    qstr = "SELECT tk.bookingid, tk.tourgroupid, tk.customerid, c.firstname, c.familyname, c.dob, c.email FROM tourbookings tk JOIN customers c ON tk.customerid = c.customerid ORDER BY tk.bookingid ASC;"
     cursor.execute(qstr)
+    orders = cursor.fetchall()
+    return render_template("customers.html", flag=2, orderlist=orders)
 
-    # List all booking orders
 
-    return render_template("booking.html")
+@app.route("/Searching")
+def Searching():
+    cursor = getCursor()
+    qstr = "SELECT customerid, firstname, familyname FROM customers;"
+    cursor.execute(qstr)
+    customers = cursor.fetchall()
+    return render_template("customers.html", flag=3, customers=customers)
+
+
+@app.route("/booking/search", methods=['POST'])
+def bookingSearch():
+    name = request.form.get('customerid')
+    cursor = getCursor()
+    qstr = f"""SELECT tk.bookingid, tk.tourgroupid, tg.tourid, t.tourname, it.destinationid, dt.destinationname, tk.customerid, c.firstname, c.familyname, c.dob, 
+    c.email FROM tourbookings as tk JOIN customers as c ON tk.customerid = c.customerid JOIN tourgroups as tg ON 
+    tk.tourgroupid = tg.tourgroupid JOIN tours AS t ON tg.tourid = t.tourid JOIN itineraries AS it ON 
+    it.tourid = t.tourid JOIN destinations AS dt ON it.destinationid = dt.destinationid WHERE tk.customerid = {name} ORDER BY tk.bookingid ASC"""
+    cursor.execute(qstr)
+    orders = cursor.fetchall()
+    return render_template("customers.html", flag=4, orderlist=orders)
 
 
 @app.errorhandler(404)
