@@ -1,0 +1,349 @@
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\Wenjie\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.15\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="assignment-web-application-development-for-atl-project">Assignment: Web Application Development for ATL Project </h1>
+<ul>
+<li><a href="#assignment-web-application-development-for-atl-project">Assignment: Web Application Development for ATL Project</a>
+<ul>
+<li><a href="#0-assignment-requirements-translation-and-problem-solving-approach">0. Assignment Requirements Translation and Problem-Solving Approach</a></li>
+<li><a href="#1-milestone-submission">1. Milestone Submission</a>
+<ul>
+<li><a href="#requirements">Requirements:</a></li>
+</ul>
+</li>
+<li><a href="#2-final-submission">2. Final Submission</a>
+<ul>
+<li><a href="#requirements-1">Requirements:</a></li>
+</ul>
+</li>
+<li><a href="#3-problem-solving-approach-and-steps">3. Problem-Solving Approach and Steps</a>
+<ul>
+<li><a href="#31-milestone-submission">3.1 Milestone Submission</a></li>
+<li><a href="#32-final-submission">3.2 Final Submission</a></li>
+</ul>
+</li>
+<li><a href="#4-assignment-proposal-summary">4. Assignment Proposal Summary</a></li>
+<li><a href="#5-report-project-assignment">5. Report: Project Assignment</a>
+<ul>
+<li><a href="#51-design-decisions">5.1 Design Decisions:</a></li>
+<li><a href="#52-image-source">5.2 Image Source</a>
+<ul>
+<li><a href="#521-home-page-splash-image">5.2.1 Home Page Splash image</a></li>
+<li><a href="#522-new-zealand-city-list-image">5.2.2 New Zealand City List Image</a></li>
+</ul>
+</li>
+<li><a href="#53-database-questions">5.3 Database Questions:</a>
+<ul>
+<li><a href="#531-what-sql-statement-creates-the-tours-table-and-defines-its-fieldscolumns-copy-and-paste-only-the-relevant-lines-of-sql">5.3.1 What SQL statement creates the tours table and defines its fields/columns? (Copy and paste only the relevant lines of SQL.</a></li>
+<li><a href="#532-which-lines-of-sql-script-set-up-the-relationship-between-the-tours-and-tourgroups-tables">5.3.2 Which lines of SQL script set up the relationship between the tours and tourgroups tables?</a></li>
+<li><a href="#533-the-current-atl-only-works-for-individual-travellers-write-sql-script-to-create-a-new-table-called-families-which-includes-a-unique-family-id-the-family-name-an-optional-short-description-the-id-must-be-added-automatically-by-the-database-relationships-to-other-tables-not-required">5.3.3 The current ATL only works for individual travellers. Write SQL script to create a new table called families, which includes a unique family ID, the family name, an optional short description. The ID must be added automatically by the database. (Relationships to other tables not required.)</a></li>
+<li><a href="#534-write-an-sql-statement-that-adds-a-row-for-a-new-family-to-your-new-families-table-make-up-some-values-for-a-fictional-family">5.3.4 Write an SQL statement that adds a row for a new family to your new families table. Make up some values for a fictional family</a></li>
+<li><a href="#535-what-changes-would-you-need-to-make-to-other-tables-in-the-database-to-fully-incorporate-the-new-families-table-into-the-data-model-below-describe-the-changes-sql-script-not-required">5.3.5 What changes would you need to make to other tables in the database to fully incorporate the new families table into the data model below? (Describe the changes. SQL script not required.)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="0-assignment-requirements-translation-and-problem-solving-approach">0. Assignment Requirements Translation and Problem-Solving Approach </h2>
+<blockquote>
+<p>This assignment involves developing a Web application for a tourism company named "Aotearoa Tours Ltd (ATL)." The project is divided into two submission phases: Milestone Submission and Final Submission.</p>
+</blockquote>
+<h2 id="1-milestone-submission">1. Milestone Submission </h2>
+<h3 id="requirements">Requirements: </h3>
+<ul>
+<li>Create a private GitHub repository named atl and place the provided Web application files (e.g., <a href="http://app.py">app.py</a>) in the main directory.</li>
+<li>Host the Web application on PythonAnywhere, ensuring that files are cloned from the GitHub repository and a MySQL database named atl is set up.</li>
+<li>Ensure that the / (home page) and /tours (tours page) routes are running correctly.</li>
+<li>Provide access for the instructor (GitHub and PythonAnywhere).</li>
+</ul>
+<h2 id="2-final-submission">2. Final Submission </h2>
+<h3 id="requirements-1">Requirements: </h3>
+<p>Complete multiple functional modules of the Web application, including:</p>
+<ul>
+<li>Customer list display, customer search, adding/editing customers, and customer booking overview.
+<ul>
+<li>Adding images and introductory text to the home page.</li>
+<li>Implementing booking functionality with age restrictions.</li>
+<li>Using Bootstrap CSS for layout, ensuring a clean and professional interface.</li>
+</ul>
+</li>
+<li>Write a project report documenting design decisions and database-related questions.</li>
+<li>Submit GitHub repository and PythonAnywhere links.</li>
+</ul>
+<h2 id="3-problem-solving-approach-and-steps">3. Problem-Solving Approach and Steps </h2>
+<h3 id="31-milestone-submission">3.1 Milestone Submission </h3>
+<ul>
+<li><strong>Step 1: Create GitHub Repository</strong>
+<ul>
+<li>Log in to GitHub and create a private repository named atl.</li>
+<li>Upload the provided Web application files (e.g., <a href="http://app.py">app.py</a>, HTML templates) to the main directory of the repository.</li>
+<li>Ensure a clear file structure for easy development.</li>
+</ul>
+</li>
+<li><strong>Step 2: Configure PythonAnywhere</strong>
+<ul>
+<li>Register and log in to PythonAnywhere.</li>
+<li>Clone the GitHub repository to the home directory on PythonAnywhere.</li>
+<li>Create a MySQL database named atl and import the provided SQL files to initialize the data.</li>
+<li>Configure the Web application to ensure the / and /tours routes are running correctly.</li>
+</ul>
+</li>
+<li><strong>Step 3: Provide Access</strong>
+<ul>
+<li>Add the instructor's account (lincolnmac or <a href="mailto:computing@lincoln.ac.nz">computing@lincoln.ac.nz</a>) as a collaborator to the GitHub repository.</li>
+<li>Add the instructor as a "teacher" on PythonAnywhere.</li>
+</ul>
+</li>
+<li><strong>Step 4: Submit Links</strong>
+<ul>
+<li>Submit the GitHub repository link and the PythonAnywhere Web application link to the course platform.</li>
+</ul>
+</li>
+</ul>
+<h3 id="32-final-submission">3.2 Final Submission </h3>
+<ul>
+<li><strong>Step 1: Develop the Web Application</strong>
+<ul>
+<li>Home Page Design: Add appropriate images and introductory text to the home page, using Bootstrap for layout.</li>
+<li>Customer List Functionality: Complete the tourlist.html template to display a list of customers for a specific tour group, sorted by surname, with links to customer details.</li>
+<li>Booking Functionality: Implement the /booking/add route to allow users to book customers for future tours, considering age restrictions.</li>
+<li>Customer Search Functionality: Create templates and routes to enable searching for customers by name and displaying search results.</li>
+<li>Add/Edit Customer Functionality: Create templates and routes to allow adding/editing customer information with proper validation.</li>
+<li>Customer Booking Overview: Create templates and routes to display a summary of customer bookings, including tour names and departure dates.</li>
+</ul>
+</li>
+<li><strong>Step 2: Write the Project Report</strong>
+<ul>
+<li>In the <a href="http://README.md">README.md</a> file of the GitHub repository, document design decisions, database questions, and other relevant information using Markdown format.</li>
+<li>Discuss design decisions, focusing on page structure, template reuse, and data interaction.</li>
+<li>Answer database-related questions, such as creating tables and setting relationships.</li>
+</ul>
+</li>
+<li><strong>Step 3: Testing and Optimization</strong>
+<ul>
+<li>Test the Web application on both local and PythonAnywhere environments to ensure functionality.</li>
+<li>Optimize code, ensuring well-formatted and well-documented HTML, SQL, and Python code.</li>
+<li>Ensure a clean and professional interface, adhering to Bootstrap CSS standards.</li>
+</ul>
+</li>
+<li><strong>Step 4: Final Submission</strong>
+<ul>
+<li>Submit the GitHub repository link and PythonAnywhere link to the course platform.</li>
+<li>Ensure the GitHub repository includes all code files, images, requirements.txt, and the <a href="http://README.md">README.md</a> report.</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-assignment-proposal-summary">4. Assignment Proposal Summary </h2>
+<p>This assignment requires students to develop a fully functional Web application involving customer management, booking systems, and data interaction. The project is divided into two submission phases, and students must complete code development, functional implementation, and project report writing within the specified timeframe. The problem-solving approach includes:</p>
+<blockquote>
+<ol>
+<li>Completing the configuration and setup for the Milestone Submission phase.</li>
+<li>Focusing on functional module development and user experience optimization in the Final Submission phase.</li>
+<li>Writing a project report to document design decisions and database-related questions.</li>
+<li>Strictly adhering to project constraints, ensuring code standards, clean interfaces, and using only the specified technologies (Python, Flask, Bootstrap, MySQL).</li>
+</ol>
+</blockquote>
+<p>Through this project, students can consolidate their Web development skills while also practicing code organization, functional implementation, and documentation writing.</p>
+<h2 id="5-report-project-assignment">5. Report: Project Assignment </h2>
+<h3 id="51-design-decisions">5.1 Design Decisions: </h3>
+<p>When designing and developing my Flask app, I focused on creating a clean, modular, and maintainable codebase. Here are some of the key design decisions I made:</p>
+<ul>
+<li><strong>Template Design:</strong> For editing functionality, I chose to use the same template with conditional statements (like Jinja2's {% if %}) to toggle between display and edit modes. This decision was made to reduce code duplication and to simplify the template management. It allows me to have a single template file that can handle both viewing and editing data, making the app more efficient.<br>
+<strong>Ex. render customer html with jinja2 if statement:</strong></li>
+</ul>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code>{% if flag == 1 %}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/Orders<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token color">darkblue</span><span class="token punctuation">;</span> <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">white</span><span class="token punctuation">;</span> <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>Total: {{ counts }} Customers<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container mt-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-group mb-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search-input<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Search By First Name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-group-append<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token entity named-entity" title="&nbsp;">&amp;nbsp;</span><span class="token entity named-entity" title="&nbsp;">&amp;nbsp;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-outline-secondary<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search-button<span class="token punctuation">"</span></span>
+          <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token color">blue</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bi bi-search<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">white</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  ...
+  {% if flag == 3 %}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container mt-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/booking/search<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>customerid<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-label<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Search by Name:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>customerid<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>customerid<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-select<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        {% for customer in customers %}
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{{ customer.customerid }}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>{{ customer.firstname }} {{ customer.familyname }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+        {% endfor %}
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">white</span><span class="token punctuation">;</span> <span class="token property">background-color</span><span class="token punctuation">:</span><span class="token color">darkblue</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Search<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre><ul>
+<li><strong>Error Handling:</strong> I implemented custom error pages and messages to enhance user experience. This includes handling common errors like 404 (page not found) and 500 (server error), providing users with clear and helpful feedback.</li>
+</ul>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token comment"># Add python error handler.</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>errorhandler</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">page_not_found</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-return">return</span> render_template<span class="token punctuation">(</span><span class="token string">"404.html"</span><span class="token punctuation">)</span>
+</code></pre><p>Add 404.html, display 404 page if url not found.</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>error-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>error-title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Oops!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>error-message<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>404 - PAGE NOT FOUND<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>error-description<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            The page you are looking for might have been removed, had its name changed or is temporarily unavailable.
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>error-button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>GO TO HOMEPAGE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+</code></pre><ul>
+<li><strong>Modularization:</strong> I modularized my Flask app by creating separate modules for different functionalities. This not only makes the codebase more organized but also makes it easier to scale and maintain.</li>
+</ul>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token comment"># Ex. Customer modularization: Add/Edit/Update/Search</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">customer_search</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># List customer details.</span>
+    cursor <span class="token operator">=</span> getCursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    qstr <span class="token operator">=</span> <span class="token string">"SELECT * FROM customers ORDER BY customers.familyname, customers.dob ASC"</span>
+    cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>qstr<span class="token punctuation">)</span>
+    customers <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    counts <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>customers<span class="token punctuation">)</span>
+    <span class="token keyword keyword-return">return</span> render_template<span class="token punctuation">(</span><span class="token string">"customers.html"</span><span class="token punctuation">,</span> flag<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> counts<span class="token operator">=</span>counts<span class="token punctuation">,</span> customers<span class="token operator">=</span>customers<span class="token punctuation">)</span>
+
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/customer_new'</span><span class="token punctuation">,</span> methods <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">,</span> <span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">customer_new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-if">if</span> request<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">'POST'</span><span class="token punctuation">:</span>
+        firstname <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'firstname'</span><span class="token punctuation">)</span>
+        familyname <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'familyname'</span><span class="token punctuation">)</span>
+        dob <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'dob'</span><span class="token punctuation">)</span>
+        email <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'email'</span><span class="token punctuation">)</span>
+        phone <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'phone'</span><span class="token punctuation">)</span>
+        cursor <span class="token operator">=</span> getCursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        qstr <span class="token operator">=</span> <span class="token string">"INSERT INTO customers (firstname, familyname, dob, email, phone) VALUES (%s, %s, %s, %s, %s)"</span><span class="token punctuation">;</span> 
+        cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>qstr<span class="token punctuation">,</span> <span class="token punctuation">(</span>firstname<span class="token punctuation">,</span> familyname<span class="token punctuation">,</span> dob<span class="token punctuation">,</span> email<span class="token punctuation">,</span> phone<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-return">return</span> redirect<span class="token punctuation">(</span>url_for<span class="token punctuation">(</span><span class="token string">'customer_search'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-else">else</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> render_template<span class="token punctuation">(</span><span class="token string">"users.html"</span><span class="token punctuation">,</span> flag<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/customer_edit'</span><span class="token punctuation">,</span> methods <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">,</span> <span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">customer_edit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-if">if</span> request<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">'POST'</span><span class="token punctuation">:</span>
+        selected_user <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'edit_options'</span><span class="token punctuation">)</span>
+        cursor <span class="token operator">=</span> getCursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        qstr <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"SELECT * FROM customers WHERE customerid = </span><span class="token interpolation"><span class="token punctuation">{</span>selected_user<span class="token punctuation">}</span></span><span class="token string">;"</span></span>
+        cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>qstr<span class="token punctuation">)</span>
+        customer <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-return">return</span> render_template<span class="token punctuation">(</span><span class="token string">"users.html"</span><span class="token punctuation">,</span> flag<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> customer<span class="token operator">=</span>customer<span class="token punctuation">)</span>
+    <span class="token keyword keyword-else">else</span><span class="token punctuation">:</span>
+        cursor <span class="token operator">=</span> getCursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        qstr <span class="token operator">=</span> <span class="token string">"SELECT * FROM customers;"</span>
+        cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>qstr<span class="token punctuation">)</span>
+        customers <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-return">return</span> render_template<span class="token punctuation">(</span><span class="token string">"users.html"</span><span class="token punctuation">,</span> flag<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> customers<span class="token operator">=</span>customers<span class="token punctuation">)</span>
+    
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/customer_update'</span><span class="token punctuation">,</span> methods <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">customer_update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    cursor <span class="token operator">=</span> getCursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    firstname <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'firstname'</span><span class="token punctuation">)</span>
+    familyname <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'familyname'</span><span class="token punctuation">)</span>
+    dob <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'dob'</span><span class="token punctuation">)</span>
+    email <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'email'</span><span class="token punctuation">)</span>
+    phone <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'phone'</span><span class="token punctuation">)</span>
+    customerid <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'customerid'</span><span class="token punctuation">)</span>
+    qstr <span class="token operator">=</span> <span class="token string">"UPDATE customers SET firstname = %s, familyname = %s, dob = %s, email = %s, phone = %s WHERE customerid = %s;"</span>
+    cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>qstr<span class="token punctuation">,</span> <span class="token punctuation">(</span>firstname<span class="token punctuation">,</span> familyname<span class="token punctuation">,</span> dob<span class="token punctuation">,</span> email<span class="token punctuation">,</span> phone<span class="token punctuation">,</span> customerid<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-return">return</span> redirect<span class="token punctuation">(</span>url_for<span class="token punctuation">(</span><span class="token string">'customer_search'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre><h3 id="52-image-source">5.2 Image Source </h3>
+<blockquote>
+<p>For the images used in my app, I sourced them from the following locations:</p>
+</blockquote>
+<h4 id="521-home-page-splash-image">5.2.1 Home Page Splash image </h4>
+<ul>
+<li><strong>New Zealand Trip Pictures</strong><br>
+<img src="static/images/hqdefault.jpg" alt="alt text"></li>
+</ul>
+<h4 id="522-new-zealand-city-list-image">5.2.2 New Zealand City List Image </h4>
+<ul>
+<li><strong>Milford</strong><br>
+<img src="static/images/Milford.jpg" alt="alt text"></li>
+<li><strong>Queenstown</strong><br>
+<img src="static/images/Queenstown.jpg" alt="alt text"></li>
+<li><strong>Rotorua</strong><br>
+<img src="static/images/Rotorua.jpg" alt="alt text"></li>
+</ul>
+<h3 id="53-database-questions">5.3 Database Questions: </h3>
+<h4 id="531-what-sql-statement-creates-the-tours-table-and-defines-its-fieldscolumns-copy-and-paste-only-the-relevant-lines-of-sql">5.3.1 What SQL statement creates the tours table and defines its fields/columns? (Copy and paste only the relevant lines of SQL. </h4>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Creating the Tours Table:</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-TABLE">TABLE</span> tours <span class="token punctuation">(</span>
+    tour_id <span class="token keyword keyword-INT">INT</span> <span class="token keyword keyword-AUTO_INCREMENT">AUTO_INCREMENT</span> <span class="token keyword keyword-PRIMARY">PRIMARY</span> <span class="token keyword keyword-KEY">KEY</span><span class="token punctuation">,</span>
+    tour_name <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    tour_group_id <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span>
+    <span class="token keyword keyword-FOREIGN">FOREIGN</span> <span class="token keyword keyword-KEY">KEY</span> <span class="token punctuation">(</span>tour_group_id<span class="token punctuation">)</span> <span class="token keyword keyword-REFERENCES">REFERENCES</span> tourgroups<span class="token punctuation">(</span>tour_group_id<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h4 id="532-which-lines-of-sql-script-set-up-the-relationship-between-the-tours-and-tourgroups-tables">5.3.2 Which lines of SQL script set up the relationship between the tours and tourgroups tables? </h4>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Setting Up the Relationship Between Tours and Tourgroups:</span>
+
+<span class="token keyword keyword-ALTER">ALTER</span> <span class="token keyword keyword-TABLE">TABLE</span> tours
+<span class="token keyword keyword-ADD">ADD</span> <span class="token keyword keyword-COLUMN">COLUMN</span> tour_group_id <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span>
+<span class="token keyword keyword-ADD">ADD</span> <span class="token keyword keyword-FOREIGN">FOREIGN</span> <span class="token keyword keyword-KEY">KEY</span> <span class="token punctuation">(</span>tour_group_id<span class="token punctuation">)</span> <span class="token keyword keyword-REFERENCES">REFERENCES</span> tourgroups<span class="token punctuation">(</span>tour_group_id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Creating a New Families <span class="token keyword keyword-Table">Table</span>:
+</code></pre><h4 id="533-the-current-atl-only-works-for-individual-travellers-write-sql-script-to-create-a-new-table-called-families-which-includes-a-unique-family-id-the-family-name-an-optional-short-description-the-id-must-be-added-automatically-by-the-database-relationships-to-other-tables-not-required">5.3.3 The current ATL only works for individual travellers. Write SQL script to create a new table called families, which includes a unique family ID, the family name, an optional short description. The ID must be added automatically by the database. (Relationships to other tables not required.) </h4>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Creating the Families Table:</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-TABLE">TABLE</span> families <span class="token punctuation">(</span>
+    family_id <span class="token keyword keyword-INT">INT</span> <span class="token keyword keyword-AUTO_INCREMENT">AUTO_INCREMENT</span> <span class="token keyword keyword-PRIMARY">PRIMARY</span> <span class="token keyword keyword-KEY">KEY</span><span class="token punctuation">,</span>
+    family_name <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    description <span class="token keyword keyword-TEXT">TEXT</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h4 id="534-write-an-sql-statement-that-adds-a-row-for-a-new-family-to-your-new-families-table-make-up-some-values-for-a-fictional-family">5.3.4 Write an SQL statement that adds a row for a new family to your new families table. Make up some values for a fictional family </h4>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Adding a Row for a New Family:</span>
+
+<span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> families <span class="token punctuation">(</span>family_name<span class="token punctuation">,</span> description<span class="token punctuation">)</span> 
+<span class="token keyword keyword-VALUES">VALUES</span> <span class="token punctuation">(</span><span class="token string">'Smith Family'</span><span class="token punctuation">,</span> <span class="token string">'A friendly family of four exploring the world.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h4 id="535-what-changes-would-you-need-to-make-to-other-tables-in-the-database-to-fully-incorporate-the-new-families-table-into-the-data-model-below-describe-the-changes-sql-script-not-required">5.3.5 What changes would you need to make to other tables in the database to fully incorporate the new families table into the data model below? (Describe the changes. SQL script not required.) </h4>
+<blockquote>
+<p>To fully incorporate the new families table into the data model, I would need to make the following changes:</p>
+</blockquote>
+<ul>
+<li>Add a Foreign Key in the Customers Table: Add a family_id column to the customers table to link individuals to their respective families.</li>
+<li>Update Relationships: Adjust any queries or logic that previously assumed individuals were not part of families. This might involve updating joins or conditions in SQL queries.</li>
+<li>Modify Application Logic: Update the application logic to handle family-related operations, such as listing all family members or aggregating data across a family.</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

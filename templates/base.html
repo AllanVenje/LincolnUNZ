@@ -21,13 +21,10 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{{url_for('home')}}"><i class="bi bi-house-check" style="font-size: 2em;"></i> Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{url_for('tours')}}"><i class="bi bi-airplane" style="font-size: 2em;"></i> Tours</a>
-            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-vcard" style="font-size: 2em;"></i> Customer</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{{url_for('customer_search')}}" >Search Customer</a></li>
+                <li><a class="dropdown-item" href="{{url_for('customer_search')}}" >All Customers</a></li>
                 <li><a class="dropdown-item" href="{{url_for('customer_new')}}">Add Customer</a></li>
                 <li><a class="dropdown-item" href="{{url_for('customer_edit')}}">Edit Customer</a></li>
               </ul>
@@ -35,13 +32,13 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-journal-richtext" style="font-size: 2em;"></i> Booking</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{{url_for('Searching')}}">Search</a></li>
-                <li><a class="dropdown-item" href="{{url_for('makebooking')}}">New Booking</a></li>
+                <li><a class="dropdown-item" href="{{url_for('makebooking')}}">Add Booking</a></li>
+                <li><a class="dropdown-item" href="{{url_for('Searching')}}">Search Booking</a></li>
               </ul>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('tours')}}"><i class="bi bi-airplane" style="font-size: 2em;"></i> Tours</a>
+            </li>
           </ul>
         </div>
       </div>

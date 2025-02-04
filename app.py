@@ -63,9 +63,11 @@ def tourlist():
     qstr = f"SELECT startdate FROM tourgroups WHERE tourgroupid={tourgroupid};"
     cursor.execute(qstr)
     startdate = cursor.fetchone()['startdate']
-    qstr = f"""SELECT c.customerid, c.firstname, c.familyname, c.dob, tours.tourid, tours.tourname, itineraries.destinationid, destinations.destinationname
-      FROM customers AS c JOIN tours ON tours.tourid={tourid} JOIN itineraries ON itineraries.tourid = {tourid} JOIN destinations ON 
-      itineraries.destinationid = destinations.destinationid ORDER BY c.firstname ASC"""
+    qstr = f"""SELECT c.customerid, c.firstname, c.familyname, c.dob, c.email, c.phone, t.tourid, t.tourname, tb.bookingid
+                FROM customers AS c 
+                JOIN tours AS t ON t.tourid={tourid} 
+                JOIN tourbookings AS tb ON tb.tourgroupid = {tourgroupid} 
+                ORDER BY c.firstname ASC, c.dob ASC;"""
     cursor.execute(qstr)
     customerlist = cursor.fetchall()
     return render_template("tourlist.html", tourname=tourname, startdate=startdate, customerlist=customerlist)
@@ -120,7 +122,7 @@ def makebooking():
 def customer_search():
     # List customer details.
     cursor = getCursor()
-    qstr = "SELECT * FROM customers;"
+    qstr = "SELECT * FROM customers ORDER BY customers.familyname, customers.dob ASC"
     cursor.execute(qstr)
     customers = cursor.fetchall()
     counts = len(customers)
@@ -179,10 +181,18 @@ def Orders():
     if request.method == 'POST':
         cursor = getCursor()
         customerid = request.form.get('customerid')
-        qstr = f"""SELECT tk.bookingid, tk.tourgroupid, tg.tourid, t.tourname, it.destinationid, dt.destinationname, tk.customerid, c.firstname, c.familyname, c.dob, 
-        c.email FROM tourbookings as tk JOIN customers as c ON tk.customerid = c.customerid JOIN tourgroups as tg ON 
-        tk.tourgroupid = tg.tourgroupid JOIN tours AS t ON tg.tourid = t.tourid JOIN itineraries AS it ON 
-        it.tourid = t.tourid JOIN destinations AS dt ON it.destinationid = dt.destinationid WHERE tk.customerid = {customerid} ORDER BY tk.bookingid ASC"""
+        # qstr = f"""SELECT tk.bookingid, tk.tourgroupid, tg.tourid, t.tourname, it.destinationid, dt.destinationname, tk.customerid, c.firstname, c.familyname, c.dob, 
+        # c.email FROM tourbookings as tk JOIN customers as c ON tk.customerid = c.customerid JOIN tourgroups as tg ON 
+        # tk.tourgroupid = tg.tourgroupid JOIN tours AS t ON tg.tourid = t.tourid JOIN itineraries AS it ON 
+        # it.tourid = t.tourid JOIN destinations AS dt ON it.destinationid = dt.destinationid WHERE tk.customerid = {customerid} ORDER BY tk.bookingid ASC"""
+
+        qstr = f"""select c.customerid, c.firstname, c.familyname, c.dob, c.email, tb.bookingid, t.tourid, t.tourname ,tg.startdate from tourbookings as tb 
+                    join customers as c on c.customerid=tb.customerid
+                    join tourgroups as tg on tg.tourgroupid = tb.tourgroupid 
+                    join tours as t on t.tourid = tg.tourid
+                    where c.customerid = {customerid}
+                    order by c.familyname, c.dob asc;
+                """
         cursor.execute(qstr)
         orders = cursor.fetchall()
         return render_template("customers.html", flag=4, orderlist=orders)
@@ -205,12 +215,20 @@ def Searching():
 
 @app.route("/booking/search", methods=['POST'])
 def bookingSearch():
-    name = request.form.get('customerid')
+    user_id = request.form.get('customerid')
     cursor = getCursor()
-    qstr = f"""SELECT tk.bookingid, tk.tourgroupid, tg.tourid, t.tourname, it.destinationid, dt.destinationname, tk.customerid, c.firstname, c.familyname, c.dob, 
-    c.email FROM tourbookings as tk JOIN customers as c ON tk.customerid = c.customerid JOIN tourgroups as tg ON 
-    tk.tourgroupid = tg.tourgroupid JOIN tours AS t ON tg.tourid = t.tourid JOIN itineraries AS it ON 
-    it.tourid = t.tourid JOIN destinations AS dt ON it.destinationid = dt.destinationid WHERE tk.customerid = {name} ORDER BY tk.bookingid ASC"""
+
+    # qstr = f"""SELECT tk.bookingid, tk.tourgroupid, tg.tourid, t.tourname, it.destinationid, dt.destinationname, tk.customerid, c.firstname, c.familyname, c.dob, 
+    # c.email FROM tourbookings as tk JOIN customers as c ON tk.customerid = c.customerid JOIN tourgroups as tg ON 
+    # tk.tourgroupid = tg.tourgroupid JOIN tours AS t ON tg.tourid = t.tourid JOIN itineraries AS it ON 
+    # it.tourid = t.tourid JOIN destinations AS dt ON it.destinationid = dt.destinationid WHERE tk.customerid = {user_id} ORDER BY tk.bookingid ASC"""
+    qstr = f"""select c.customerid, c.firstname, c.familyname, c.dob, c.email, tb.bookingid, t.tourid, t.tourname ,tg.startdate from tourbookings as tb 
+                join customers as c on c.customerid=tb.customerid
+                join tourgroups as tg on tg.tourgroupid = tb.tourgroupid 
+                join tours as t on t.tourid = tg.tourid
+                where c.customerid = {user_id}
+                order by c.familyname, c.dob asc;
+            """
     cursor.execute(qstr)
     orders = cursor.fetchall()
     return render_template("customers.html", flag=4, orderlist=orders)
